@@ -1,1 +1,2 @@
-# Elliot-Adinortey.github.io
+# Elliot Adinortey Agbettor
+# Software developer
