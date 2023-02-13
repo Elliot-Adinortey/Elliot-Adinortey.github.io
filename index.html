@@ -22,6 +22,9 @@
     *{
        font-family: 'Roboto', sans-serif;
     }
+    /* html, body {
+      height: 100%; 
+    } */
     .nav a{
       font-size: 1.2rem;
       text-decoration: none;
@@ -32,15 +35,27 @@
     }
     .nav-link{
       padding: 1.5rem 1.5rem !important;
-      color: #EC5B53;
+      color: #002D5B
     }
     .active{
       color: #ffffff !important;
-      background-color: #EC5B53 !important;
+      background-color: #002D5B !important;
     }
     .banner{
-      background-color: #E3E4E8;
-      min-height: 100%;
+      background-color: #e7e8eb;
+      height: 100%;
+    }
+    .banner-greetings{
+      color: #e45750;
+    }
+    .banner-title{
+      color: #002D5B;
+    }
+    .banner-subtitle{
+      color: #002D5B;
+    }
+    .banner-text{
+      color: #464D65;
     }
     .banner-image{
       height: 100%;
@@ -84,14 +99,14 @@
     </nav>
 
     <main class=" container-fluid rounded-0 p-0 text-center banner">
-      <div class="container">
+      <div class="container mh-50">
         <div class="row ">
            <div class="col-md-6 ps-0">
             <div class="container py-5 text-start ">
-              <p class="fs-5 fw-bold banner-greetings">Hello, I am</p>
+              <p class="fs-5  banner-greetings">Hello, I am</p>
               <p class="display-5 fw-bold banner-title ">ELLIOT ADINORTEY <br> AGBETTOR</p>
               <p class=" fs-5 fw-bold banner-subtitle">SOFTWARE DEVELOPER</p>
-              <p class="fs-6 my-5 banner-text">A passionate Software developer skilled in full-stack development.
+              <p class="fs-6 my-5 banner-text">A passionate Software developer skilled in full-stack development. <br>
                 Well organized, self-motivated, and proficient in programming.</p>
               <button class="btn btn-primary btn-danger p-2" type="button">Learn More</button>
             </div>
@@ -111,5 +126,37 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // showNotification(){
+      //   // if (typeof Notification !== "undefined") return;
+      //  // if (document.visibilityState === "visible") return;
+      //   const notification = new Notification("CaptiVR App", {data: 'Welcome'});
+      //    console.log( notification.data)
+      //   // console.log(notifications)
+      //   notification.onclick = () => {
+      //     // notifications.close;
+      //     // notification.show;
+      //     window.open("http://170.187.134.184");
+      //     // window.parent.focus();
+      //   }
+      // }
+      console.log(Notification.permission )
+      function showNotification(){
+        new Notification("CaptiVR App", {body: 'Welcome'})
+      };
+
+      if (Notification.permission ==='granted'){
+        showNotification()
+        // alert("You have permission")
+      } else if (Notification.permission !=='denied'){
+        Notification.requestPermission().then((permission) => {
+          // console.log(permission)
+          if (Notification.permission ==='granted'){
+            showNotification()
+          }
+        })
+      }
+
+    </script>
   </body>
 </html>
